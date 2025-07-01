@@ -1,13 +1,21 @@
-import Board from './components/Board.jsx'
-function App() {
-  
+import Board from './components/Board.jsx';
+import Toolbar from './components/Toolbar.jsx';
+import Toolbox from './components/Toolbox.jsx';
+import BoardProvider from './store/BoardProvider.jsx';
+import ToolboxProvider from './store/ToolboxProvider.jsx';
 
+function App() {
   return (
-    <>
-         <div className="text-3xl font-bold text-blue-600 text-center mt-10">Hello</div>
-         <Board/>
-    </>
-  )
+    <BoardProvider>
+      <ToolboxProvider>
+        <>
+          <Toolbar />
+          <Board />
+          <Toolbox />
+        </>
+      </ToolboxProvider>
+    </BoardProvider>
+  );
 }
 
-export default App
+export default App;
